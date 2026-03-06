@@ -6,6 +6,7 @@
     width: 100%;
     margin: auto 40px;
     max-width: 1360px;
+    border-style: none;
 
 }
 
@@ -24,4 +25,5 @@
     object-position: right top;
     width: 100%;
     max-width: 1360px;
+    border-style: none;
 }

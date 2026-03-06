@@ -1,5 +1,4 @@
-import './ItemCard.css';
-import '../../vendor/fonts.css';
+import "./ItemCard.css";
 
 function ItemCard({ item, onClick }) {
   return (

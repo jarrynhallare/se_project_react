@@ -1,20 +1,19 @@
-.cards__list{
-    display: flex;
-    flex-wrap: nowrap;
-    margin: 0 0 0 40px;
-    padding: 0;
-    list-style: none;
-    gap: 21px;
-    width: 100%;
-    background-color: #F3F3F3;
-    max-width: 1360PX;
+.cards__list {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0 0 0 40px;
+  padding: 0;
+  list-style: none;
+  gap: 21px;
+  width: 100%;
+  background-color: #f3f3f3;
+  max-width: 1360px;
 }
 
 .cards__text {
-    margin: 40px auto 34px 40px;
-    font-family: "CabinetGrotesk";
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-
+  margin: 40px auto 34px 40px;
+  font-family: "CabinetGrotesk";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
 }

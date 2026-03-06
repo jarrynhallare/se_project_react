@@ -1,8 +1,7 @@
-import './Main.css';
-import '../../vendor/fonts.css';
-import WeatherCard from '../WeatherCard/WeatherCard';
-import ItemCard from '../ItemCard/ItemCard';
-import { defaultClothingItems } from '../../utils/constants';
+import "./Main.css";
+import WeatherCard from "../WeatherCard/WeatherCard";
+import ItemCard from "../ItemCard/ItemCard";
+import { defaultClothingItems } from "../../utils/constants";
 
 function Main({ WeatherData, handleCardClick }) {
   return (
@@ -14,12 +13,18 @@ function Main({ WeatherData, handleCardClick }) {
         </p>
         <ul className="cards__list">
           {defaultClothingItems
-          .filter((item) => {
-            return item.weather === WeatherData.type;
-          })
+            .filter((item) => {
+              return item.weather === WeatherData.type;
+            })
             .map((item) => {
-            return <ItemCard key={item.id} item={item} onClick={() => handleCardClick(item)} />;
-          })}
+              return (
+                <ItemCard
+                  key={item.id}
+                  item={item}
+                  onClick={() => handleCardClick(item)}
+                />
+              );
+            })}
         </ul>
       </section>
     </main>
