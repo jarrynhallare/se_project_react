@@ -1,50 +1,51 @@
 export const weatherOptions = [
   {
-day: true,
+isDayTime: true,
 condition: "clear",
 url: new URL("../assets/day/clear.svg", import.meta.url),
 },
 {
-day: true,
+isDayTime: true,
 condition: "cloudy",
 url: new URL("../assets/day/cloudy.svg", import.meta.url),
 },
 {
-day: true,
+isDayTime: true,
 condition: "rain",
 url: new URL("../assets/day/rain.svg", import.meta.url),
 },
 {
-day: true,
+isDayTime: true,
 condition: "storm",
 url: new URL("../assets/day/storm.svg", import.meta.url),
 },
 {
-day: true,
+isDayTime: true,
 condition: "snow",
 url: new URL("../assets/day/snow.svg", import.meta.url),
 },
 {
-day: false,
+isDayTime: false,
 condition: "clear",
 url: new URL("../assets/night/clear.svg", import.meta.url),
 },
 {
-day: false,
+isDayTime: false,
 condition: "cloudy",
 url: new URL("../assets/night/cloudy.svg", import.meta.url),
 },
-{day: false,
+{
+isDayTime: false,
 condition: "rain",
 url: new URL("../assets/night/rain.svg", import.meta.url),
 },
 {
-day: false,
+isDayTime: false,
 condition: "storm",
 url: new URL("../assets/night/storm.svg", import.meta.url),
 },
 {
-day: false,
+isDayTime: false,
 condition: "snow",
 url: new URL("../assets/night/snow.svg", import.meta.url),
 },
@@ -168,8 +169,8 @@ const defaultClothingItems = [
 export { defaultClothingItems };
 
 export const coordinates = {
-latitude: 35.6895,
-longitude: 139.6917,
+latitude: 29.4252,
+longitude: -98.4946,
 }
 
-export const APIKey = "7552a5b589a843cf256932c42b802f1c";
+export const APIKey = "68f328d782ab11fd65426596c1bb1575";

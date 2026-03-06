@@ -1,4 +1,5 @@
 import "./ModalWithForm.css";
+import closeIcon from '../../assets/Union.svg';
 
 function ModalWithForm({ activeModal, onClose, buttonText, title, children }) {
   return (
@@ -10,7 +11,7 @@ function ModalWithForm({ activeModal, onClose, buttonText, title, children }) {
           type="button"
           onClick={onClose}
         >
-          X
+          <img src={closeIcon} alt="close-btn" />
         </button>
         <form className="modal__form">
           {children}

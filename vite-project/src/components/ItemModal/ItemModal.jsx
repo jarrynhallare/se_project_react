@@ -1,4 +1,5 @@
 import './ItemModal.css';
+import closeIconWhite from '../../assets/Union.white.svg';
 
 function ItemModal({ activeModal, onClose, selectedCard }) {
   if (!selectedCard || !selectedCard.link) {
@@ -9,11 +10,11 @@ function ItemModal({ activeModal, onClose, selectedCard }) {
     <div className={`modal ${activeModal === 'preview' ? 'modal__opened' : ''}`}>
       <div className="modal__content_type_image">
         <button 
-          className="modal__close-button" 
+          className="modal__item_close-button" 
           type="button"
           onClick={onClose}
         >
-          X
+          <img src={closeIconWhite} alt="Close" />
         </button>
         <img src={selectedCard.link} alt={selectedCard.name} className="modal__image" />
         <div className="modal__footer">

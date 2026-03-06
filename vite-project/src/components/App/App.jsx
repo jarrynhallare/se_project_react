@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
 
 
 import './App.css'
@@ -6,7 +6,8 @@ import Header from '../Header/Header';
 import Main from '../Main/Main';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
 import ItemModal from '../ItemModal/ItemModal';
-import {getWeatherData} from '../../utils/weatherApi';
+import { APIKey, coordinates } from '../../utils/constants';
+import {getWeatherData, filterWeatherData} from '../../utils/weatherApi';
 
 
 function App() {
