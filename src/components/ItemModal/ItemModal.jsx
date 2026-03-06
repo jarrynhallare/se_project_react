@@ -8,7 +8,7 @@ function ItemModal({ isOpen, onClose, selectedCard }) {
 
   return (
     <div
-      className={`modal ${isOpen ? "modal__opened" : ""}`}
+      className={`modal ${isOpen ? "modal_opened" : ""}`}
     >
       <div className="modal__content_type_image">
         <button
