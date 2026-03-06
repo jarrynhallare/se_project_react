@@ -2,52 +2,52 @@ export const weatherOptions = [
   {
     isDayTime: true,
     condition: "clear",
-    url: new URL("../assets/day/clear.svg", import.meta.url),
+    url: new URL("../assets/Day/clear.svg", import.meta.url),
   },
   {
     isDayTime: true,
     condition: "cloudy",
-    url: new URL("../assets/day/cloudy.svg", import.meta.url),
+    url: new URL("../assets/Day/cloudy.svg", import.meta.url),
   },
   {
     isDayTime: true,
     condition: "rain",
-    url: new URL("../assets/day/rain.svg", import.meta.url),
+    url: new URL("../assets/Day/rain.svg", import.meta.url),
   },
   {
     isDayTime: true,
     condition: "storm",
-    url: new URL("../assets/day/storm.svg", import.meta.url),
+    url: new URL("../assets/Day/storm.svg", import.meta.url),
   },
   {
     isDayTime: true,
     condition: "snow",
-    url: new URL("../assets/day/snow.svg", import.meta.url),
+    url: new URL("../assets/Day/snow.svg", import.meta.url),
   },
   {
     isDayTime: false,
     condition: "clear",
-    url: new URL("../assets/night/clear.svg", import.meta.url),
+    url: new URL("../assets/Night/clear.svg", import.meta.url),
   },
   {
     isDayTime: false,
     condition: "cloudy",
-    url: new URL("../assets/night/cloudy.svg", import.meta.url),
+    url: new URL("../assets/Night/cloudy.svg", import.meta.url),
   },
   {
     isDayTime: false,
     condition: "rain",
-    url: new URL("../assets/night/rain.svg", import.meta.url),
+    url: new URL("../assets/Night/rain.svg", import.meta.url),
   },
   {
     isDayTime: false,
     condition: "storm",
-    url: new URL("../assets/night/storm.svg", import.meta.url),
+    url: new URL("../assets/Night/storm.svg", import.meta.url),
   },
   {
     isDayTime: false,
     condition: "snow",
-    url: new URL("../assets/night/snow.svg", import.meta.url),
+    url: new URL("../assets/Night/snow.svg", import.meta.url),
   },
 ];
 
@@ -115,7 +115,7 @@ const defaultClothingItems = [
   {
     id: 11,
     name: "Shorts",
-    weather: "Hot",
+    weather: "hot",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Shorts.png?etag=d728c496643f610de8d8fea92dd915ba",
   },
   {
@@ -157,4 +157,4 @@ export const coordinates = {
   longitude: -98.4946,
 };
 
-export const APIKey = "68f328d782ab11fd65426596c1bb1575";
+export const apiKey = "68f328d782ab11fd65426596c1bb1575";
