@@ -1,14 +1,14 @@
 import "./ItemModal.css";
 import closeIconWhite from "../../assets/Union.white.svg";
 
-function ItemModal({ activeModal, onClose, selectedCard }) {
+function ItemModal({ isOpen, onClose, selectedCard }) {
   if (!selectedCard || !selectedCard.link) {
     return null;
   }
 
   return (
     <div
-      className={`modal ${activeModal === "preview" ? "modal__opened" : ""}`}
+      className={`modal ${isOpen ? "modal__opened" : ""}`}
     >
       <div className="modal__content_type_image">
         <button

@@ -106,7 +106,7 @@ function App() {
         </fieldset>
       </ModalWithForm>
       <ItemModal
-        activeModal={activeModal}
+        isOpen={activeModal === "preview"}
         selectedCard={selectedCard}
         onClose={() => setActiveModal("")}
       />
