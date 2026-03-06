@@ -1,6 +1,7 @@
-import './Header.css'
-import logo from '../../assets/logo.svg'
-import avatar from '../../assets/avatar.svg'
+import './Header.css';
+import '../../vendor/fonts.css';
+import logo from '../../assets/logo.svg';
+import avatar from '../../assets/avatar.svg';
 
 function Header({ setActiveModal, weatherData }) {
 

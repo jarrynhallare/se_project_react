@@ -1,4 +1,5 @@
 import './ItemModal.css';
+import '../../vendor/fonts.css';
 import closeIconWhite from '../../assets/Union.white.svg';
 
 function ItemModal({ activeModal, onClose, selectedCard }) {

@@ -1,4 +1,5 @@
 import './WeatherCard.css';
+import '../../vendor/fonts.css';
 import { weatherOptions } from '../../utils/constants';
 
 function WeatherCard({ weatherData }) {

@@ -2,10 +2,12 @@
     display: flex;
     align-items: center;
     padding: 32px 0 28px;
-    font-family: 'Cabinet Grotesk', sans-serif;
+    font-family: 'CabinetGrotesk';
     font-weight: 700;
     font-style: normal;
     font-size: 20px;
+    width: 100%;
+    max-width: 1360px;
 }
 
 .header__logo {
@@ -24,7 +26,7 @@
     margin: 0 20px 0 auto;
     border: none;
     background-color: transparent;
-    font-family: 'Cabinet Grotesk', sans-serif;
+    font-family: 'CabinetGrotesk';
     font-weight: 700;
     font-size: 20px;
 }
@@ -38,4 +40,7 @@
 
 .header__username {
     margin: 0;
+    font-family: 'CabinetGrotesk';
+    font-weight: 700;
+    font-size: 20px;
 }

@@ -7,11 +7,12 @@
     gap: 21px;
     width: 100%;
     background-color: #F3F3F3;
+    max-width: 1360PX;
 }
 
 .cards__text {
     margin: 40px auto 34px 40px;
-    font-family: "Cabinet Grotesk", sans-serif;
+    font-family: "CabinetGrotesk";
     font-size: 20px;
     font-style: normal;
     font-weight: 700;

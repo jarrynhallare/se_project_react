@@ -1,4 +1,5 @@
 import "./ModalWithForm.css";
+import '../../vendor/fonts.css';
 import closeIcon from '../../assets/Union.svg';
 
 function ModalWithForm({ activeModal, onClose, buttonText, title, children }) {

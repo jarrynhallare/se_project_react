@@ -1,9 +1,10 @@
 import { useState, useEffect} from 'react';
 
-
+import '../../vendor/fonts.css';
 import './App.css'
 import Header from '../Header/Header';
 import Main from '../Main/Main';
+import Footer from '../Footer/Footer';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
 import ItemModal from '../ItemModal/ItemModal';
 import { APIKey, coordinates } from '../../utils/constants';
@@ -34,6 +35,7 @@ useEffect(() => {
       <div className="page__wrapper">
         <Header setActiveModal={setActiveModal} weatherData={WeatherData} />
         <Main WeatherData={WeatherData} handleCardClick={handleCardClick} />
+        <Footer />
       </div>
       <ModalWithForm
         title="New garment"
@@ -66,6 +68,7 @@ useEffect(() => {
         </fieldset>
       </ModalWithForm>
       <ItemModal activeModal={activeModal} selectedCard={selectedCard} onClose={() => setActiveModal('')} />
+      
     </div>
   );
 }
