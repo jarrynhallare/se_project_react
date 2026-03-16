@@ -7,7 +7,8 @@
   font-style: normal;
   font-size: 20px;
   width: 100%;
-  max-width: 1360px;
+  height: 40px;
+  
 }
 
 .header__logo {
@@ -17,11 +18,12 @@
 }
 
 .header__date-and-location {
-  margin: 0;
+  margin: 0 666px 0 0;
 }
 
+
 .header__add-clothes-btn {
-  margin: 0 20px 0 auto;
+  margin:0 0 0 20px;
   border: none;
   background-color: transparent;
   font-family: "CabinetGrotesk";
@@ -36,7 +38,7 @@
 }
 
 .header__username {
-  margin: 0;
+  margin: 0 0 0 20px;
   font-family: "CabinetGrotesk";
   font-weight: 700;
   font-size: 20px;

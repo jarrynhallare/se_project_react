@@ -1,8 +1,10 @@
 import './WeatherCard.css';
 import { weatherOptions } from '../../utils/constants';
+import { useContext } from 'react';
+import CurrentTemperatureUnitContext from '../../Contexts/CurrentTempuratureUnitContext';
 
 function WeatherCard({ weatherData }) {
-  
+  const { currentTempUnit } = useContext(CurrentTemperatureUnitContext);
 
   if (!weatherData || !weatherData.condition) {
     return <section className="weather-card">Loading...</section>;
@@ -37,7 +39,7 @@ function WeatherCard({ weatherData }) {
 
   return (
     <section className="weather-card" style={backgroundStyle}>
-      <p className="weather-card__temp">{weatherData.temp.F}°F</p>
+      <p className="weather-card__temp">{currentTempUnit === 'F' ? `${weatherData.temp.F}°F` : `${weatherData.temp.C}°C`}</p>
       <img 
         src={svgUrl} 
         alt={`Card showing ${weatherOption.isDayTime ? "day" : "night"} time ${weatherOption.condition} weather`}
