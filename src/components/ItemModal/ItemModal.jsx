@@ -2,7 +2,7 @@ import "./ItemModal.css";
 import closeIconWhite from "../../assets/Union.white.svg";
 
 function ItemModal({ isOpen, onClose, selectedCard }) {
-  if (!selectedCard || !selectedCard.link) {
+  if (!selectedCard || !selectedCard.imageUrl) {
     return null;
   }
 
@@ -19,7 +19,7 @@ function ItemModal({ isOpen, onClose, selectedCard }) {
           <img src={closeIconWhite} alt="Close" />
         </button>
         <img
-          src={selectedCard.link}
+          src={selectedCard.imageUrl}
           alt={selectedCard.name}
           className="modal__image"
         />

@@ -1,7 +1,7 @@
 .cards__list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 325px);
-  margin: 0 0 0 40px;
+  grid-template-columns: repeat(4, 325px);
+  margin: 0;
   padding: 0;
   list-style: none;
   gap: 21px;
@@ -11,7 +11,7 @@
 }
 
 .cards__text {
-  margin: 40px auto 34px 40px;
+  margin: 40px auto 34px 0;
   font-family: "CabinetGrotesk";
   font-size: 20px;
   font-style: normal;

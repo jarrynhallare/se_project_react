@@ -29,6 +29,7 @@
   border-style: none;
   padding: 0;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .modal__content {
@@ -72,8 +73,15 @@
 }
 
 .modal__label_type_radio {
-  margin: 0 0 8px;
+  margin: 0;
+  
 }
+
+.modal__radio-input{
+  cursor: pointer;
+  margin: 0 8px 0 0;
+}
+
 .modal__submit-button {
   margin: 24px 0 0;
   padding: 0;
@@ -86,4 +94,5 @@
   font-family: "CabinetGrotesk";
   font-weight: 700;
   font-size: 20px;
+  cursor: pointer;
 }

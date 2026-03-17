@@ -29,6 +29,7 @@
   font-family: "CabinetGrotesk";
   font-weight: 700;
   font-size: 20px;
+  cursor: pointer;
 }
 
 .header__user-container {
@@ -42,4 +43,9 @@
   font-family: "CabinetGrotesk";
   font-weight: 700;
   font-size: 20px;
+}
+
+.header__profile-link{
+  color: black;
+  text-decoration: none;
 }

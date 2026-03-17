@@ -7,8 +7,8 @@ import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import ItemModal from "../ItemModal/ItemModal";
 import Profile from "../Profile/Profile";
-
-import { apiKey, coordinates, defaultClothingItems } from "../../utils/constants";
+import { getItems } from "../../utils/api";
+import { apiKey, coordinates,  } from "../../utils/constants";
 import { getWeatherData, filterWeatherData } from "../../utils/weatherApi";
 import CurrentTemperatureUnitContext from "../../Contexts/CurrentTempuratureUnitContext";
 import AddItemModal from "../AddItemModal/AddItemModal";
@@ -25,7 +25,7 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
 
-  const [clothingItems, setClothingItems] = useState(defaultClothingItems);
+  const [clothingItems, setClothingItems] = useState([]);
 
   const [currentTempUnit, setCurrentTempUnit] = useState("F");
 
@@ -48,7 +48,7 @@ function App() {
     const newCardData = {
       id: Date.now(),
       name: data.name,
-      link: data.imageUrl,
+      imageUrl: data.imageUrl,
       weather: data.weather,
     };
     setClothingItems([...clothingItems, newCardData]);
@@ -83,6 +83,13 @@ function App() {
         setWeatherData(filteredData);
       })
       .catch(console.error);
+
+      getItems()
+        .then((data) => {
+          setClothingItems(data);
+        })
+        .catch(console.error);
+
   }, []);
 
   return (

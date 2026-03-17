@@ -8,8 +8,13 @@
   display: block;
   align-items: center;
 }
+
+.card:hover {
+ cursor: pointer;
+}
+
 .card {
-  width: 325px;
+  width: 100%;
   height: 328px;
   position: relative;
   display: flex;
