@@ -6,6 +6,8 @@ import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import ItemModal from "../ItemModal/ItemModal";
+import Profile from "../Profile/Profile";
+
 import { apiKey, coordinates, defaultClothingItems } from "../../utils/constants";
 import { getWeatherData, filterWeatherData } from "../../utils/weatherApi";
 import CurrentTemperatureUnitContext from "../../Contexts/CurrentTempuratureUnitContext";
@@ -89,8 +91,19 @@ function App() {
       <div className="page__wrapper">
         <Header setActiveModal={setActiveModal} weatherData={weatherData} />
         <Routes>
-          <Route path="/" element={<Main weatherData={weatherData} clothingItems={clothingItems} handleCardClick={handleCardClick} />} />
-           <Route path="/profile" element={<p>PROFILE</p>} />
+          <Route path="/" 
+          element={
+            <Main 
+            weatherData={weatherData} 
+            clothingItems={clothingItems} 
+            handleCardClick={handleCardClick} 
+            />
+            } 
+          />
+           <Route path="/profile" element={
+            <Profile 
+            clothingItems={clothingItems} 
+            handleCardClick={handleCardClick} />} />
         </Routes>
         <Footer />
       </div>
