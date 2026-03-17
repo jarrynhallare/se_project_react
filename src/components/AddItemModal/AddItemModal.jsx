@@ -9,11 +9,12 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
     imageUrl: "",
     weather: "",
   };
-  const { values, handleChange } = useForm(defaultValues);
+  const { values, handleChange, setValues } = useForm(defaultValues);
 
   function handleSubmit(e) {
     e.preventDefault();
     onAddItem(values);
+    setValues(defaultValues);
   };
 
   return (

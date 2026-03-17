@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 
 import "./App.css";
 import Header from "../Header/Header";
@@ -43,8 +44,9 @@ function App() {
 
   const onAddItem = (data) => {
     const newCardData = {
+      id: Date.now(),
       name: data.name,
-      imageUrl: data.imageUrl,
+      link: data.imageUrl,
       weather: data.weather,
     };
     setClothingItems([...clothingItems, newCardData]);
@@ -86,7 +88,10 @@ function App() {
     <div className="page">
       <div className="page__wrapper">
         <Header setActiveModal={setActiveModal} weatherData={weatherData} />
-        <Main weatherData={weatherData} clothingItems={clothingItems} handleCardClick={handleCardClick} />
+        <Routes>
+          <Route path="/" element={<Main weatherData={weatherData} clothingItems={clothingItems} handleCardClick={handleCardClick} />} />
+           <Route path="/profile" element={<p>PROFILE</p>} />
+        </Routes>
         <Footer />
       </div>
         <AddItemModal
