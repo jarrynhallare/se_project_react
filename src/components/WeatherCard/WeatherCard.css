@@ -1,29 +1,28 @@
 .weather-card {
-    position: relative;
-    display: flex;
-    height: 80px;
-    border-radius: 16px;
-    width: 100%;
-    margin: 28px 0 0 0;
-    max-width: 1360px;
-    border-style: none;
-
+  position: relative;
+  display: flex;
+  height: 80px;
+  border-radius: 16px;
+  width: 100%;
+  margin: 28px 0 0 0;
+  max-width: 1360px;
+  border-style: none;
 }
 
 .weather-card__temp {
-    font-size: 36px;
-    line-height: 40px;
-    margin: 0;
-    position: absolute;
-    top: 20px;
-    left: 16px;
-    color: #FFFFFF;
+  font-size: 36px;
+  line-height: 40px;
+  margin: 0;
+  position: absolute;
+  top: 20px;
+  left: 16px;
+  color: #ffffff;
 }
 
 .weather-card__image {
-    object-fit: cover;
-    object-position: right top;
-    width: 100%;
-    max-width: 1360px;
-    border-style: none;
+  object-fit: cover;
+  object-position: right top;
+  width: 100%;
+  max-width: 1360px;
+  border-style: none;
 }

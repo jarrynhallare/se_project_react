@@ -1,0 +1,86 @@
+.modal__content_type_confirmation {
+  background-color: white;
+  border-radius: 16px;
+  padding: 0;
+  margin: 0;
+  width: 670px;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.modal__close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.modal__message {
+  margin: 60px 0 40px 0;
+  font-family: "CabinetGrotesk";
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  line-height: 24px;
+  max-width: 367px;
+  height: 48px;
+  text-align: center;
+}
+
+.modal__button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal__button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-family: "CabinetGrotesk";
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.modal__button_type_cancel {
+  background-color: transparent;
+  border-style: none;
+  color: #000;
+  font-family: "CabinetGrotesk";
+  font-size: 20px;
+  margin: 0 0 60px 0;
+  padding: 0;
+}
+
+.modal__button_type_cancel:hover {
+  color: #333;
+}
+
+.modal__button_type_confirm {
+  color: #ff4d00;
+  background-color: transparent;
+  border-style: none;
+  font-family: "CabinetGrotesk";
+  font-size: 20px;
+  margin: 0 0 24px 0;
+  padding: 0;
+}
+
+.modal__button_type_confirm:hover {
+  color: #e03e00;
+}

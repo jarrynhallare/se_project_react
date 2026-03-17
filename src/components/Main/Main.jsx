@@ -12,7 +12,11 @@ function Main({ weatherData, clothingItems, handleCardClick }) {
       <WeatherCard weatherData={weatherData} />
       <section className="cards">
         <p className="cards__text">
-          Today is {currentTempUnit === 'F' ? `${weatherData.temp.F}°F` : `${weatherData.temp.C}°C`} / You may want to wear:
+          Today is{" "}
+          {currentTempUnit === "F"
+            ? `${weatherData.temp.F}°F`
+            : `${weatherData.temp.C}°C`}{" "}
+          / You may want to wear:
         </p>
         <ul className="cards__list">
           {clothingItems
@@ -22,7 +26,7 @@ function Main({ weatherData, clothingItems, handleCardClick }) {
             .map((item) => {
               return (
                 <ItemCard
-                  key={item.id}
+                  key={item._id}
                   item={item}
                   onClick={() => handleCardClick(item)}
                 />

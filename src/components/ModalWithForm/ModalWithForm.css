@@ -74,10 +74,9 @@
 
 .modal__label_type_radio {
   margin: 0;
-  
 }
 
-.modal__radio-input{
+.modal__radio-input {
   cursor: pointer;
   margin: 0 8px 0 0;
 }
