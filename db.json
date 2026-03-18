@@ -101,18 +101,6 @@
       "name": "T-Shirt",
       "weather": "hot",
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/T-Shirt.png?etag=44ed1963c44ab19cd2f5011522c5fc09"
-    },
-    {
-      "name": "Basic Tee",
-      "imageUrl": "https://www.google.com/imgres?q=clothes&imgurl=https%3A%2F%2Fraven.contrado.app%2Fresources%2Fimages%2F2021-8%2F188038%2Fmens-clothing1545070_l.jpg%3Fauto%3Dformat%26q%3D80%26w%3D600&imgrefurl=https%3A%2F%2Fwww.contrado.com%2Fclothing&docid=bmGB0vDjwM3enM&tbnid=_XEIwuEOnZSIKM&vet=12ahUKEwi3oMPfm6WTAxV8l2oFHelNILMQnPAOegQIGhAB..i&w=600&h=770&hcb=2&ved=2ahUKEwi3oMPfm6WTAxV8l2oFHelNILMQnPAOegQIGhAB",
-      "weather": "hot",
-      "_id": 17
-    },
-    {
-      "name": "Basic Tee",
-      "imageUrl": "https://share.google/BbjBuQgsQ4Q5d45xf",
-      "weather": "hot",
-      "_id": 18
     }
   ]
 }

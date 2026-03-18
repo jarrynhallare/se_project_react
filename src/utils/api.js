@@ -1,7 +1,11 @@
 const baseUrl = "http://localhost:3001";
 
+const checkResponse = (res) => {
+  return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
+};
+
 export const getItems = () => {
-  return fetch(`${baseUrl}/items`).then((res) => res.json());
+  return fetch(`${baseUrl}/items`).then(checkResponse);
 };
 
 export const addItem = (item) => {
@@ -11,11 +15,11 @@ export const addItem = (item) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(item),
-  }).then((res) => res.json());
+  }).then(checkResponse);
 };
 
 export const removeItem = (id) => {
   return fetch(`${baseUrl}/items/${id}`, {
     method: "DELETE",
-  }).then((res) => res.json());
+  }).then(checkResponse);
 };

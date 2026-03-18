@@ -12,7 +12,7 @@ import DeleteConfirmationModal from "../DeleteConfirmationModal/DeleteConfirmati
 import { getItems, addItem, removeItem } from "../../utils/api";
 import { apiKey, coordinates } from "../../utils/constants";
 import { getWeatherData, filterWeatherData } from "../../utils/weatherApi";
-import CurrentTemperatureUnitContext from "../../Contexts/CurrentTempuratureUnitContext";
+import CurrentTemperatureUnitContext from "../../Contexts/CurrentTemperatureUnitContext";
 import AddItemModal from "../AddItemModal/AddItemModal";
 
 function App() {
@@ -28,13 +28,13 @@ function App() {
   const [selectedCard, setSelectedCard] = useState({});
   const [cardToDelete, setCardToDelete] = useState(null);
   const [clothingItems, setClothingItems] = useState([]);
-  const [currentTempUnit, setCurrentTempUnit] = useState("F");
+  const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
 
   const handleToggleSwitchChange = () => {
-    if (currentTempUnit === "F") {
-      setCurrentTempUnit("C");
+    if (currentTemperatureUnit === "F") {
+      setCurrentTemperatureUnit("C");
     } else {
-      setCurrentTempUnit("F");
+      setCurrentTemperatureUnit("F");
     }
   };
 
@@ -45,35 +45,40 @@ function App() {
 
   const handleAddItem = (newItem) => {
     addItem(newItem).then((item) => {
-      setClothingItems([...clothingItems, item]);
+      setClothingItems((prev) => [...prev, item]);
       setActiveModal("");
+    })
+    .catch((err) => {
+      console.error("Failed to add item:", err);
     });
   };
 
   const openConfirmationModal = (card) => {
     setSelectedCard(card);
+    setCardToDelete(card);
     setActiveModal("delete-confirmation");
   };
 
   const handleCardDelete = () => {
-    if (cardToDelete && cardToDelete._id) {
-      removeItem(cardToDelete._id).then(() => {
-        setClothingItems(
-          clothingItems.filter((item) => item._id !== cardToDelete._id),
-        );
-        setCardToDelete(null);
-        setSelectedCard({});
-        setActiveModal("");
-      });
-    }
-  };
+  if (cardToDelete) {
+    removeItem(cardToDelete._id).then(() => {
+      setClothingItems(clothingItems.filter((item) => item._id !== cardToDelete._id));
+      setActiveModal("");
+      setCardToDelete(null);
+    });
+  }
+};
 
-  const handleRemoveItem = (id) => {
-    removeItem(id).then(() => {
+const handleRemoveItem = (id) => {
+  removeItem(id)
+    .then(() => {
       setClothingItems(clothingItems.filter((item) => item._id !== id));
       setActiveModal("");
+    })
+    .catch((error) => {
+      console.error('Failed to delete item:', error);
     });
-  };
+};
 
   const closeActiveModal = () => {
     setActiveModal("");
@@ -98,6 +103,9 @@ function App() {
     };
   }, [activeModal]);
 
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+  
   useEffect(() => {
     getWeatherData(coordinates, apiKey)
       .then((data) => {
@@ -108,12 +116,18 @@ function App() {
 
     getItems().then((data) => {
       setClothingItems(data);
-    });
+    })
+    
+    .catch((err) => {
+      console.error("Failed to fetch items:", err);
+      setError("Failed to load clothing items. Please try again later.");
+    })
+    .finally(() => {setIsLoading(false)});
   }, []);
 
   return (
     <CurrentTemperatureUnitContext.Provider
-      value={{ currentTempUnit, handleToggleSwitchChange }}
+      value={{ currentTemperatureUnit, handleToggleSwitchChange }}
     >
       <div className="page">
         <div className="page__wrapper">
@@ -135,6 +149,7 @@ function App() {
                 <Profile
                   clothingItems={clothingItems}
                   handleCardClick={handleCardClick}
+                  setActiveModal={setActiveModal}
                 />
               }
             />

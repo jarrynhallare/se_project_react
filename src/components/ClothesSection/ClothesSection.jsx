@@ -1,12 +1,12 @@
 import "./ClothesSection.css";
 import ItemCard from "../ItemCard/ItemCard";
 
-function ClothesSection({ clothingItems, handleCardClick }) {
+function ClothesSection({ clothingItems, handleCardClick, onAddItemClick }) {
   return (
     <div className="clothes-section">
       <div className="clothes-section__header">
         <p>Your items</p>
-        <button className="clothes-section__button">+ Add new</button>
+        <button className="clothes-section__button" onClick={onAddItemClick}>+ Add new</button>
       </div>
       <div className="clothes-section__cards">
         {clothingItems.map((item) => {
