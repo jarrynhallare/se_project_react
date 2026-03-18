@@ -18,6 +18,11 @@ A React app that recommends clothing based on current weather.
 - **OpenWeather API** - Weather data
 - **Cabinet Grotesk** - Custom font
 
+ ## Project Pitch Video
+ 
+ Check out [this video] https://www.loom.com/share/e982df6cd18c44bbbe4adf6fd55fcebb , where I describe my 
+ project and some challenges I faced while building it.
+
 ## Installation
 
 1. Clone the repo:
