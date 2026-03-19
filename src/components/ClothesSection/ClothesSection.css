@@ -1,6 +1,6 @@
 .clothes-section__header {
   display: flex;
-  font-family: "CabinetGrotesk";
+  font-family: "CabinetGrotesk", sans-serif;
   font-weight: 700;
   font-size: 20px;
   padding: 0;
@@ -9,23 +9,20 @@
 
 .clothes-section__cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 325px);
+  grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
   grid-gap: 20px;
   padding: 0;
-  max-width: 1360px;
-  width: 100%;
 }
 
 .clothes-section {
   flex-grow: 1;
-  width: 1015px;
   height: 676px;
 }
 
 .clothes-section__button {
   border-style: none;
   background-color: transparent;
-  font-family: "CabinetGrotesk";
+  font-family: "CabinetGrotesk", sans-serif;
   font-weight: 700;
   font-size: 20px;
   color: #00000099;

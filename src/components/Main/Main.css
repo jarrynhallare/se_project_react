@@ -1,18 +1,17 @@
 .cards__list {
   display: grid;
-  grid-template-columns: repeat(4, 325px);
+  grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
   margin: 0;
   padding: 0;
   list-style: none;
   gap: 21px;
   width: 100%;
   background-color: #f3f3f3;
-  max-width: 1360px;
 }
 
 .cards__text {
   margin: 40px auto 34px 0;
-  font-family: "CabinetGrotesk";
+  font-family: "CabinetGrotesk", sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 700;

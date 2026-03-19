@@ -27,7 +27,7 @@
   top: 50%;
   right: 8px;
   transform: translateY(-50%);
-  font-family: "CabinetGrotesk";
+  font-family: "CabinetGrotesk", sans-serif;
   font-weight: 700;
   font-size: 14px;
   color: gray;

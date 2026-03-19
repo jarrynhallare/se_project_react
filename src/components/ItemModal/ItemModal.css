@@ -9,8 +9,8 @@
 }
 
 .modal__image {
-  width: 100%;
-  height: 360px;
+  width: 498px;
+  height: 498px;
   object-fit: cover;
   border-radius: 16px 16px 0 0;
 }
@@ -29,14 +29,14 @@
 
 .modal__caption {
   margin: 0 0 12px 0;
-  font-family: "CabinetGrotesk";
+  font-family: "CabinetGrotesk", sans-serif;
   font-size: 20px;
   font-weight: 600;
 }
 
 .modal__weather {
   margin: 0 0 32px 0;
-  font-family: "CabinetGrotesk";
+  font-family: "CabinetGrotesk", sans-serif;
   font-size: 20px;
   color: #000;
   font-weight: 700;
@@ -59,7 +59,7 @@
   background-color: transparent;
   border: none;
   color: #ff4d00;
-  font-family: "CabinetGrotesk";
+  font-family: "CabinetGrotesk", sans-serif;
   font-size: 20px;
   font-weight: 700;
   cursor: pointer;

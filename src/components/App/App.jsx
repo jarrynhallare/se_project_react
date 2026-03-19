@@ -45,7 +45,7 @@ function App() {
 
   const handleAddItem = (newItem) => {
     addItem(newItem).then((item) => {
-      setClothingItems((prev) => [...prev, item]);
+      setClothingItems((prev) => [item, ...prev]);
       setActiveModal("");
     })
     .catch((err) => {

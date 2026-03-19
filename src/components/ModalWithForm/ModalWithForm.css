@@ -18,7 +18,7 @@
 .modal__title {
   margin: 0 auto 24px;
   font-size: 16px;
-  font-family: "CabinetGrotesk";
+  font-family: "CabinetGrotesk", sans-serif;
   font-weight: 700;
 }
 
@@ -73,7 +73,7 @@
 }
 
 .modal__label_type_radio {
-  margin: 0;
+  margin: 0 0 8px 0;
 }
 
 .modal__radio-input {
@@ -90,7 +90,7 @@
   border-style: none;
   background-color: #0000004d;
   color: #ffffff;
-  font-family: "CabinetGrotesk";
+  font-family: "CabinetGrotesk", sans-serif;
   font-weight: 700;
   font-size: 20px;
   cursor: pointer;
