@@ -4,8 +4,6 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  max-width: 400px;
-  overflow: hidden;
 }
 
 .modal__image {
