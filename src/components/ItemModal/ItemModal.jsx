@@ -1,7 +1,12 @@
 import "./ItemModal.css";
 import closeIconWhite from "../../assets/Union.white.svg";
+import { useContext } from "react";
+import CurrentUserContext from "../../Contexts/CurrentUserContext";
 
 function ItemModal({ isOpen, onClose, selectedCard, onDelete }) {
+  const currentUser = useContext(CurrentUserContext);
+  const isOwn = currentUser?._id === selectedCard?.owner;
+
   if (!selectedCard || !selectedCard.imageUrl) {
     return null;
   }
@@ -30,13 +35,15 @@ function ItemModal({ isOpen, onClose, selectedCard, onDelete }) {
             <h3 className="modal__caption">{selectedCard.name}</h3>
             <p className="modal__weather">Weather: {selectedCard.weather}</p>
           </div>
-          <button
-            className="modal__delete-button"
-            type="button"
-            onClick={handleDeleteClick}
-          >
-            Delete item
-          </button>
+         {isOwn && (
+            <button
+              className="modal__delete-button"
+              type="button"
+              onClick={handleDeleteClick}
+            >
+              Delete item
+            </button>
+          )}
         </div>
       </div>
     </div>

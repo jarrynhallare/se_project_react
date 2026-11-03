@@ -20,8 +20,23 @@ function SideBar() {
             {username?.toUpperCase().charAt(0) || ""}
           </span>
         )}
+        <button
+  type="button"
+  className="sidebar__edit-button"
+  onClick={onEditProfile}
+>
+  Edit profile
+</button>
+  <button
+        type="button"
+        className="sidebar__sign-out"
+        onClick={onSignOut}
+      >
+        Sign out
+      </button>
       </div>
     </aside>
+    
   );
 }
 

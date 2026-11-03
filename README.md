@@ -31,3 +31,7 @@ A React app that recommends clothing based on current weather.
 git clone https://github.com/jarrynhallare/se_project_react.git
 cd se_project_react/vite-project
 ```
+
+## Backend Repo
+
+https://github.com/jarrynhallare/se_project_express
