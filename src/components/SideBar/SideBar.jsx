@@ -1,9 +1,10 @@
 import "./SideBar.css";
 import avatarDefault from "../../assets/avatar.svg";
 
-function SideBar() {
-  const avatar = avatarDefault;
-  const username = "Terrence Tegegne";
+function SideBar({ onEditProfile, onSignOut }) {
+  const avatar = CurrentUserContext._currentValue?.avatar;
+  const username =
+    CurrentUserContext._currentValue?.username || "Terrence Tegegne";
 
   return (
     <aside className="sidebar">
@@ -20,23 +21,19 @@ function SideBar() {
             {username?.toUpperCase().charAt(0) || ""}
           </span>
         )}
+
         <button
-  type="button"
-  className="sidebar__edit-button"
-  onClick={onEditProfile}
->
-  Edit profile
-</button>
-  <button
-        type="button"
-        className="sidebar__sign-out"
-        onClick={onSignOut}
-      >
-        Sign out
-      </button>
+          type="button"
+          className="sidebar__edit-button"
+          onClick={onEditProfile}
+        >
+          Edit profile
+        </button>
+        <button type="button" className="sidebar__sign-out" onClick={onSignOut}>
+          Sign out
+        </button>
       </div>
     </aside>
-    
   );
 }
 

@@ -1,10 +1,8 @@
+import checkResponse from "./api";
+
 const baseUrl = "http://localhost:3001";
 
-function checkResponse(response) {
-  return response.ok
-    ? response.json()
-    : Promise.reject(new Error(`Error: ${response.status}`));
-}
+checkResponse();
 
 export function getItems() {
   return fetch(`${baseUrl}/items`).then(checkResponse);

@@ -1,7 +1,7 @@
 import "./DeleteConfirmationModal.css";
 import closeIconBlack from "../../assets/Union.svg";
 
-function DeleteConfirmationModal({ isOpen, onClose, onConfirm, cardName }) {
+function DeleteConfirmationModal({ isOpen, onClose, onConfirm }) {
   const handleConfirm = () => {
     onConfirm();
   };

@@ -19,6 +19,7 @@ import { getWeatherData, filterWeatherData } from "../../utils/weatherApi";
 import CurrentTemperatureUnitContext from "../../Contexts/CurrentTemperatureUnitContext";
 import CurrentUserContext from "../../Contexts/CurrentUserContext";
 import EditProfileModal from "../EditProfileModal/EditProfileModal";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -35,12 +36,16 @@ function App() {
   const [cardToDelete, setCardToDelete] = useState(null);
   const [clothingItems, setClothingItems] = useState([]);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
+  const {isAuthLoading, setIsAuthLoading} = useState(true);
 
   // Hooks must be called inside the component.
   useEffect(() => {
     const token = localStorage.getItem("jwt");
 
-    if (!token) return;
+    if (!token) {
+      setIsAuthLoading(false);
+      return;
+    }
 
     getUserInfo(token)
       .then((user) => {
@@ -50,6 +55,9 @@ function App() {
       .catch((error) => {
         console.error("Could not validate saved token:", error);
         localStorage.removeItem("jwt");
+      })
+      .finally(() => {
+        setIsAuthLoading(false);
       });
   }, []);
 
@@ -84,8 +92,17 @@ function App() {
   function handleLogin({ email, password }) {
     signin({ email, password })
       .then((response) => {
+         const navigate = useNavigate();
+        function handleSubmit() {
+          submitForm().then(() => {
+            navigate("/thank-you");
+          });
+
         if (!response.token) {
           throw new Error("Sign-in response did not include a token.");
+        
+        
+        }
         }
 
         localStorage.setItem("jwt", response.token);
@@ -94,7 +111,7 @@ function App() {
       .then((user) => {
         setCurrentUser(user);
         setIsLoggedIn(true);
-        setActiveModal("");
+        closeActiveModal();
       })
       .catch((error) => console.error("Sign-in failed:", error));
   }
@@ -191,12 +208,6 @@ function handleUpdateUser({ name, avatar }) {
     setCardToDelete(null);
   }
 
-  function handleSignOut() {
-    localStorage.removeItem("jwt");
-    setCurrentUser(null);
-    setIsLoggedIn(false);
-    setActiveModal("");
-  }
 
   return (
   <CurrentUserContext.Provider value={currentUser}>
@@ -225,7 +236,10 @@ function handleUpdateUser({ name, avatar }) {
             <Route
               path="/profile"
               element={
-                isLoggedIn ? (
+                <ProtectedRoute
+                isLoggedIn={isLoggedIn}
+                isLoading={isAuthLoading}
+                >
                   <Profile
                     clothingItems={clothingItems}
                     handleCardClick={handleCardClick}
@@ -235,7 +249,7 @@ function handleUpdateUser({ name, avatar }) {
                     currentUser={currentUser}
                     onEditProfile={() => setActiveModal("edit-profile")}
                   />
-                ) : null
+               </ProtectedRoute>
               }
             />
           </Routes>
