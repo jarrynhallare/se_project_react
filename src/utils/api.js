@@ -1,8 +1,6 @@
-import checkResponse from "./api";
+import checkResponse from "./checkResponse";
 
 const baseUrl = "http://localhost:3001";
-
-checkResponse();
 
 export function getItems() {
   return fetch(`${baseUrl}/items`).then(checkResponse);

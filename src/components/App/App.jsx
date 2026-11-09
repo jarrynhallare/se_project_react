@@ -36,7 +36,7 @@ function App() {
   const [cardToDelete, setCardToDelete] = useState(null);
   const [clothingItems, setClothingItems] = useState([]);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
-  const {isAuthLoading, setIsAuthLoading} = useState(true);
+  const [isAuthLoading, setIsAuthLoading] = useState(true);
 
   // Hooks must be called inside the component.
   useEffect(() => {
